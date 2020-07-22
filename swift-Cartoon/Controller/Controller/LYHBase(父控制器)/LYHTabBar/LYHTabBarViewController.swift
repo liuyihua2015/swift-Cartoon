@@ -24,7 +24,7 @@ class LYHTabBarViewController: UITabBarController {
         
         //1.首页
 //
-        let onepageVC = LYHMineController()
+        let onepageVC = LYHHomeViewController()
 
         addChildController(onepageVC, title: "首页", image: UIImage(named: "tab_home"),
                             selectedImage: UIImage(named: "tab_home_S"))
@@ -47,9 +47,9 @@ class LYHTabBarViewController: UITabBarController {
     func addChildController(_ childController:UIViewController, title: String?,
                             image: UIImage?,selectedImage: UIImage?)  {
         
-//        childController.title = title
+        childController.title = title
         
-        childController.tabBarItem = UITabBarItem(title: title, image: image?.withRenderingMode(.alwaysOriginal), selectedImage: selectedImage?.withRenderingMode(.alwaysOriginal))
+        childController.tabBarItem = UITabBarItem(title: nil, image: image?.withRenderingMode(.alwaysOriginal), selectedImage: selectedImage?.withRenderingMode(.alwaysOriginal))
         
         if UIDevice.current.userInterfaceIdiom == .phone {
             
